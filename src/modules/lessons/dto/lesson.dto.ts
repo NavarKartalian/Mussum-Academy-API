@@ -1,0 +1,11 @@
+import { ObjectType } from '@nestjs/graphql';
+import { FilterableField, FilterableOffsetConnection } from '@nestjs-query/query-graphql'
+import { BaseDTO } from 'src/modules/bases/dto/base.dto';
+import { ContentDTO } from 'src/modules/contents/dto/content.dto';
+
+@ObjectType('Lesson')
+@FilterableOffsetConnection('contents', () => ContentDTO, { nullable: true })
+export class LessonDTO extends BaseDTO {
+  @FilterableField()
+  description: string;
+}

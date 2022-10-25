@@ -4,21 +4,21 @@ import { NestjsQueryGraphQLModule } from '@nestjs-query/query-graphql';
 import { NestjsQueryTypeOrmModule } from '@nestjs-query/query-typeorm';
 import { PagingStrategies } from '@nestjs-query/query-graphql';
 
-import { CreateStudentInput } from './dto/create-student.input';
-import { UpdateStudentInput } from './dto/update-student.input';
-import { Student } from './entities/student.entity';
-import { StudentDTO } from './dto/student.dto';
+import { Content } from './entities/content.entity';
+import { CreateContentInput } from './dto/create-content.input';
+import { UpdateContentInput } from './dto/update-content.input';
+import { ContentDTO } from './dto/content.dto';
 
 @Module({
   imports: [
     NestjsQueryGraphQLModule.forFeature({
-      imports: [NestjsQueryTypeOrmModule.forFeature([Student])],
+      imports: [NestjsQueryTypeOrmModule.forFeature([Content])],
       resolvers: [
         { 
-          DTOClass: StudentDTO, 
-          EntityClass: Student,
-          CreateDTOClass: CreateStudentInput,
-          UpdateDTOClass: UpdateStudentInput,
+          DTOClass: ContentDTO, 
+          EntityClass: Content,
+          CreateDTOClass: CreateContentInput,
+          UpdateDTOClass: UpdateContentInput,
           enableTotalCount: true,
           pagingStrategy: PagingStrategies.OFFSET,
         }
@@ -27,4 +27,4 @@ import { StudentDTO } from './dto/student.dto';
   ],
   providers: []
 })
-export class StudentsModule {}
+export class ContentsModule {}
