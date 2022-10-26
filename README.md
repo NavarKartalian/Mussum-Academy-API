@@ -51,3 +51,10 @@ $ npm run start:prod
 # Initiate Docker
 $ docker-compose up
 ```
+
+## Techs
+
+- [Nestjs](https://github.com/nestjs/nest) -  Node.js framework 
+- [@nestjs-query](https://doug-martin.github.io/nestjs-query/) - CRUD for GraphQL
+- [QraphQL](https://graphql.org/) - Query language
+- [apollo-server-express](https://www.npmjs.com/package/apollo-server-express) - Express integration of Apollo Server
